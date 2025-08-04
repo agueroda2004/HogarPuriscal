@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Developing from "./components/Developing";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import QuienesSomos from "./pages/QuienesSomos";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,8 +17,9 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="/working" element={<Developing />} />
+        <Route path="/quienes-somos" element={<QuienesSomos />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
