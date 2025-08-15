@@ -70,7 +70,7 @@ const Hero = ({ infoRef }) => {
         </NavLink>
       </motion.div>
       {/* Flecha hacia abajo */}
-      <div className="absolute bottom-5 z-11 w-full flex justify-center items-center">
+      <div className="absolute bottom-5 z-11 w-full flex justify-center items-center animate-bounce">
         <img
           src={assets.ArrowDown}
           alt="Flecha hacia abajo"

@@ -9,6 +9,8 @@ import Developing from "./components/Developing";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import QuienesSomos from "./pages/QuienesSomos";
+import Contacto from "./pages/Contacto";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,9 +22,11 @@ function App() {
         <Route path="" element={<Home />} />
         <Route path="/working" element={<Developing />} />
         <Route path="/quienes-somos" element={<QuienesSomos />} />
+        <Route path="/contacto" element={<Contacto />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <Toaster position="top-center" />
     </>
   );
 }

@@ -19,6 +19,10 @@ export const imgUrl = {
     "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/ImagenCorousel.png?updatedAt=1754019311315",
   QuienesSomos:
     "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/QuienesSomos.png?updatedAt=1754225651580",
+  TrabajoComunal:
+    "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/TrabajoComunal.png?updatedAt=1754225655932",
+  Voluntariado:
+    "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Voluntariado.png?updatedAt=1754225659345",
 };
 
 export const menuLinks = [
@@ -60,7 +64,7 @@ export const menuLinks = [
   },
   {
     name: "Contacto",
-    path: "/working",
+    path: "/contacto",
   },
 ];
 
@@ -68,7 +72,7 @@ export const InfoCards = [
   {
     title: "Servicios",
     description:
-      "En A Su Lado, ofrecemos un cuidado completo las 24 horas, que incluye asistencia médica, nutrición personalizada y actividades recreativas. Nos enfocamos en el bienestar integral de nuestros residentes, brindando tranquilidad a las familias al saber que sus seres queridos reciben la mejor atención.",
+      "Cuidado integral 24 horas con asistencia médica, nutrición y actividades para el bienestar de residentes.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Servicios.png?updatedAt=1754225659600",
     alt: "Servicios",
@@ -76,7 +80,7 @@ export const InfoCards = [
   {
     title: "Requisitos",
     description:
-      "Para garantizar la mejor atención, en A Su Lado valoramos una admisión transparente y sencilla. Solicitamos información médica relevante, historial de medicamentos y contactos de emergencia. Estamos aquí para guiarlo en cada paso, asegurando una transición cómoda y segura para su ser querido.",
+      "Proceso de admisión sencillo que incluye información médica y contactos de emergencia para una transición segura.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Requisitos.png?updatedAt=1754225644557",
     alt: "Requisitos",
@@ -84,7 +88,7 @@ export const InfoCards = [
   {
     title: "Donaciones",
     description:
-      "Su generosidad nos permite seguir brindando atención de calidad a nuestros residentes. Agradecemos cualquier tipo de donación, ya sea en especie, económica o mediante su tiempo como voluntario. Cada aporte cuenta y hace una diferencia.",
+      "Agradecemos donaciones en especie, dinero o tiempo voluntario para mantener la calidad de atención.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Donaciones.png?updatedAt=1754225659889",
     alt: "Donaciones",
@@ -92,7 +96,7 @@ export const InfoCards = [
   {
     title: "Colaboradores",
     description:
-      "En A Su Lado, creemos en el poder de la comunidad. Si comparte nuestra pasión por el cuidado de personas mayores, lo invitamos a colaborar. Ya sea como voluntario, profesional de la salud o parte de nuestro equipo, su apoyo es invaluable para seguir ofreciendo un ambiente de calidez y bienestar. ¡Juntos podemos hacer una diferencia!",
+      "Invitamos a voluntarios y profesionales a unirse para crear un ambiente cálido y de bienestar.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Colaboradores.png?updatedAt=1754225653315",
     alt: "Colaboradores",
@@ -100,7 +104,7 @@ export const InfoCards = [
   {
     title: "Quiénes somos",
     description:
-      "En A Su Lado, somos un equipo comprometido con el bienestar y la dignidad de las personas mayores. Nuestra misión es ofrecer un entorno cálido, seguro y lleno de cariño, donde cada residente se sienta valorado, acompañado y respetado.",
+      "Equipo comprometido en ofrecer un entorno seguro, cálido y respetuoso para adultos mayores.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/QuienesSomos.png?updatedAt=1754330437164",
     alt: "Quiénes somos",
@@ -108,7 +112,7 @@ export const InfoCards = [
   {
     title: "Voluntariado",
     description:
-      "¿Le gustaría marcar una diferencia en la vida de nuestros adultos mayores? Únase como voluntario en A Su Lado. Su tiempo, compañía y cariño pueden transformar un día común en una experiencia significativa para nuestros residentes.",
+      "Oportunidad para aportar tiempo y cariño, transformando la vida de nuestros residentes.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Voluntariado.png?updatedAt=1754225659345",
     alt: "Voluntariado",
@@ -116,7 +120,7 @@ export const InfoCards = [
   {
     title: "Trabajo comunal",
     description:
-      "Ofrecemos espacios para que estudiantes realicen su trabajo comunal en un entorno enriquecedor. Aquí podrán aprender, crecer y aportar con empatía al cuidado de nuestros adultos mayores, mientras desarrollan valores humanos fundamentales.",
+      "Espacios para que estudiantes aprendan y aporten con empatía en el cuidado de adultos mayores.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/TrabajoComunal.png?updatedAt=1754225655932",
     alt: "Trabajo comunal",
@@ -124,7 +128,7 @@ export const InfoCards = [
   {
     title: "Preguntas frecuentes",
     description:
-      "Aquí encontrará respuestas a las consultas más comunes sobre nuestros servicios, procesos de admisión, horarios de visita y formas de colaborar. Queremos brindarle toda la información que necesita para tomar decisiones informadas.",
+      "Respuestas a dudas comunes sobre servicios, admisión, visitas y colaboración.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/PreguntasFrecuentes.png?updatedAt=1754225639566",
     alt: "Preguntas frecuentes",
@@ -132,7 +136,7 @@ export const InfoCards = [
   {
     title: "Contacto",
     description:
-      "¿Desea más información o tiene alguna consulta? No dude en comunicarse con nosotros. Estamos aquí para atenderle y brindarle toda la orientación necesaria sobre nuestros servicios y procesos.",
+      "Información y atención para consultas sobre servicios y procesos.",
     image:
       "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Contacto.png?updatedAt=1754225659440",
     alt: "Contacto",

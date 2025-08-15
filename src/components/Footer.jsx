@@ -3,7 +3,7 @@ import { assets, menuLinks } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <div className="w-full border border-gray-300 mt-20 bg-[#FBFBFB] py-20">
+    <div className="w-full border border-gray-300 bg-[#FBFBFB] py-20">
       {/* Contacto */}
       <div className="text-sm text-[#4E4E4E] w-full">
         <div className="flex flex-col items-center">
