@@ -301,7 +301,7 @@ const Contacto = () => {
                 value={formData.mensaje}
                 onChange={handleChange}
                 placeholder="Introduce el mensaje"
-                className="w-full pl-5 outline-none text-[0.8rem] min-h-[100px] pt-2"
+                className="w-full pl-5 outline-none text-[0.8rem] min-h-[100px] pt-2  resize-none"
               />
             </div>
             {/* Enviar y redes sociales */}

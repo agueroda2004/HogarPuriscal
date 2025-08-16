@@ -187,3 +187,69 @@ export const quienesSomos = [
     ],
   },
 ];
+
+export const SeccionDonaciones = {
+  title: "¿Desea colaborarnos?",
+  description: `En nuestro hogar de adultos mayores trabajamos cada día para brindar atención, cuidado y un ambiente lleno de respeto y cariño a quienes más lo necesitan. Puede apoyarnos a través de donaciones económicas, insumos o dedicando su tiempo como voluntario. Cada aporte, por pequeño que parezca, marca una gran diferencia en la vida de nuestros adultos mayores.`,
+  image:
+    "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Seccion1.png?updatedAt=1755295619898",
+  links: [
+    {
+      title: "Trabajo comunal",
+      path: "/trabajo-comunal",
+    },
+    {
+      title: "Voluntariado",
+      path: "/voluntariado",
+    },
+    {
+      title: "Donaciones",
+      path: "/donaciones",
+    },
+  ],
+  color: "DABE57",
+};
+
+export const SeccionHogar = {
+  title: "Hogar Puriscal",
+  description: `En nuestro hogar de ancianos, A Su Lado, creemos firmemente que cada residente merece un ambiente cálido, seguro y lleno de cariño. Aquí, más que un lugar para vivir, encontrará una verdadera familia dedicada a su bienestar, ofreciendo atención personalizada y actividades que enriquecen cada día. Queremos que se sienta como en casa, rodeado de respeto y compañía.`,
+  image:
+    "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/SeccionHogar.jpg?updatedAt=1755312777739",
+  links: [
+    {
+      title: "Quienes somos",
+      path: "/quienes-somos",
+    },
+    {
+      title: "Colaboradores",
+      path: "/colaboradores",
+    },
+    {
+      title: "Servicios",
+      path: "/servicios",
+    },
+  ],
+  color: "CABC92",
+};
+
+export const SeccionPreguntas = {
+  title: "¿Tiene preguntas?",
+  description: `Si desea conocer más sobre nuestros servicios, programas o formas de apoyo, estamos aquí para ayudarle. Nuestro equipo estará encantado de atender sus consultas y brindarle toda la información que necesite para sentirse seguro y confiado en su decisión. Contáctenos por teléfono, correo electrónico o a través de nuestro formulario en línea.`,
+  image:
+    "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Seccion2.png?updatedAt=1755296118188",
+  links: [
+    {
+      title: "Preguntas",
+      path: "/preguntas-frecuentes",
+    },
+    {
+      title: "Requisitos",
+      path: "/requisitos",
+    },
+    {
+      title: "Contacto",
+      path: "/contacto",
+    },
+  ],
+  color: "AE2C17",
+};

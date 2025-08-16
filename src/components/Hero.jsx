@@ -70,14 +70,14 @@ const Hero = ({ infoRef }) => {
         </NavLink>
       </motion.div>
       {/* Flecha hacia abajo */}
-      <div className="absolute bottom-5 z-11 w-full flex justify-center items-center animate-bounce">
+      {/* <div className="absolute bottom-5 z-11 w-full flex justify-center items-center animate-bounce">
         <img
           src={assets.ArrowDown}
           alt="Flecha hacia abajo"
           className="cursor-pointer hover-effect"
           onClick={scrollToElement}
         />
-      </div>
+      </div> */}
       {/* Texto */}
       <div className="absolute bottom-2 z-11 w-full flex justify-end items-center pr-2 max-sm:hidden">
         <p className="text-white opacity-50 text-[0.8rem]">
