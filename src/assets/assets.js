@@ -212,7 +212,7 @@ export const SeccionDonaciones = {
 
 export const SeccionHogar = {
   title: "Hogar Puriscal",
-  description: `En nuestro hogar de ancianos, A Su Lado, creemos firmemente que cada residente merece un ambiente cálido, seguro y lleno de cariño. Aquí, más que un lugar para vivir, encontrará una verdadera familia dedicada a su bienestar, ofreciendo atención personalizada y actividades que enriquecen cada día. Queremos que se sienta como en casa, rodeado de respeto y compañía.`,
+  description: `En nuestro hogar de ancianos, A Su Lado, creemos firmemente que cada residente merece un ambiente cálido, seguro y lleno de cariño. Aquí, más que un lugar para vivir, encontrará una verdadera familia dedicada a su bienestar, ofreciendo atención personalizada y actividades que enriquecen cada día.`,
   image:
     "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/SeccionHogar.jpg?updatedAt=1755312777739",
   links: [

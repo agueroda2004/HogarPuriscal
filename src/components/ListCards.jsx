@@ -1,5 +1,6 @@
 import React from "react";
 import { forwardRef } from "react";
+import { motion } from "motion/react";
 import {
   InfoCards,
   SeccionDonaciones,
@@ -15,7 +16,11 @@ const ListCards = forwardRef((props, ref) => {
       {/* Hogar */}
       <div className="flex justify-center items-center flex-row relative bordermax-w-full">
         {/* Imagen */}
-        <img
+        <motion.img
+          initial={{ x: -100, opacity: 0 }} // parte desde la izquierda
+          whileInView={{ x: 0, opacity: 1 }} // cuando entra en viewport
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }} // solo se ejecuta la primera vez
           src={SeccionHogar.image}
           alt=""
           className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[10px]"
@@ -34,17 +39,17 @@ const ListCards = forwardRef((props, ref) => {
         ></div>
 
         {/* Contenido encima */}
-        <div className="h-[550px] w-[300px] sm:w-[500px] absolute right-10 flex flex-col justify-center px-5 z-11">
-          <h1 className="text-white text-5xl font-bold max-w-[20px] -translate-x-20 sm:-translate-x-0 sm:text-6xl">
+        <div className="h-[550px] w-[200px] sm:w-[500px] absolute right-10 flex flex-col justify-center z-11 md:right-5">
+          <h1 className="text-white text-4xl font-bold max-w-[20px] -translate-x-20 sm:translate-x-0 sm:text-6xl">
             {SeccionHogar.title}
           </h1>
-          <p className="text-sm text-white mt-2 max-w-100 -translate-x-25 sm:-translate-x-0">
+          <p className="text-[0.6rem] text-white mt-2 max-w-100 -translate-x-25 sm:-translate-x-3 px-4 md:text-sm">
             {SeccionHogar.description}
           </p>
-          <div className="flex flex-row w-full gap-5 mt-5 flex-wrap -translate-x-30 justify-center sm:-translate-x-0">
+          <div className="flex flex-row w-full gap-5 mt-5 flex-wrap -translate-x-20 justify-start sm:-translate-x-0">
             {SeccionHogar.links.map((link, index) => (
               <button
-                className={`bg-white text-[#${SeccionHogar.color}] h-10 rounded-[10px] px-5 flex flex-row justify-center items-center gap-2 flex-wrap hover:translate-x-1 transition-all duration-300 active:translate-y-[1px] cursor-pointer`}
+                className={`bg-white text-[#CABC92] h-10 rounded-[10px] px-5 flex flex-row justify-center items-center gap-2 flex-wrap hover:translate-x-1 transition-all duration-300 active:translate-y-[1px] cursor-pointer`}
                 key={index}
               >
                 {link.title}
@@ -82,17 +87,20 @@ const ListCards = forwardRef((props, ref) => {
         ></div>
 
         {/* Contenido encima */}
-        <div className="h-[550px] w-[300px] sm:w-[500px] absolute left-10 flex flex-col justify-center px-5 z-11">
-          <h1 className="text-white text-5xl font-bold max-w-[20px] translate-x-35 sm:-translate-x-0 sm:text-6xl">
+        <div
+          src={SeccionPreguntas.image}
+          className="h-[550px] w-[200px] sm:w-[500px] absolute -left-10 flex flex-col justify-center px-5 z-11 sm:left-15"
+        >
+          <h1 className="text-white text-4xl font-bold max-w-[20px] translate-x-35 sm:-translate-x-0 sm:text-6xl">
             {SeccionPreguntas.title}
           </h1>
-          <p className="text-sm text-white mt-2 max-w-100 translate-x-30 sm:-translate-x-0">
+          <p className="text-[0.6rem] text-white mt-2 max-w-100 translate-x-35 sm:-translate-x-0 md:text-sm">
             {SeccionPreguntas.description}
           </p>
-          <div className="flex flex-row max-w-[400px] gap-5 mt-5 flex-wrap translate-x-30 justify-center sm:-translate-x-0">
+          <div className="flex flex-row max-w-[400px] gap-5 mt-5 flex-wrap translate-x-35 justify-start sm:-translate-x-0">
             {SeccionPreguntas.links.map((link, index) => (
               <button
-                className={`bg-white text-[#${SeccionPreguntas.color}] h-10 rounded-[10px] px-5 flex flex-row justify-center items-center gap-2 flex-wrap hover:translate-x-1 transition-all duration-300 active:translate-y-[1px] cursor-pointer`}
+                className={`bg-white text-[#AE2C17] h-10 rounded-[10px] px-5 flex flex-row justify-center items-center gap-2 flex-wrap hover:translate-x-1 transition-all duration-300 active:translate-y-[1px] cursor-pointer`}
                 key={index}
               >
                 {link.title}
@@ -114,7 +122,11 @@ const ListCards = forwardRef((props, ref) => {
           </div>
         </div>
         {/* Imagen */}
-        <img
+        <motion.img
+          initial={{ x: 100, opacity: 0 }} // parte desde la izquierda
+          whileInView={{ x: 0, opacity: 1 }} // cuando entra en viewport
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }} // solo se ejecuta la primera vez
           src={SeccionPreguntas.image}
           alt=""
           className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[10px]"
@@ -124,7 +136,11 @@ const ListCards = forwardRef((props, ref) => {
       {/* Donaciones */}
       <div className="flex justify-center items-center flex-row relative bordermax-w-full">
         {/* Imagen */}
-        <img
+        <motion.img
+          initial={{ x: -100, opacity: 0 }} // parte desde la izquierda
+          whileInView={{ x: 0, opacity: 1 }} // cuando entra en viewport
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }} // solo se ejecuta la primera vez
           src={SeccionDonaciones.image}
           alt=""
           className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[10px]"
@@ -143,17 +159,17 @@ const ListCards = forwardRef((props, ref) => {
         ></div>
 
         {/* Contenido encima */}
-        <div className="h-[550px] w-[300px] sm:w-[500px] absolute right-10 flex flex-col justify-center px-5 z-11">
-          <h1 className="text-white text-5xl font-bold max-w-[20px] -translate-x-35 sm:-translate-x-0 sm:text-6xl">
+        <div className="h-[550px] w-[200px] sm:w-[500px] absolute right-10 flex flex-col justify-center z-11 md:right-5">
+          <h1 className="text-white text-4xl font-bold max-w-[20px] -translate-x-20 sm:translate-x-0 sm:text-6xl">
             {SeccionDonaciones.title}
           </h1>
-          <p className="text-sm text-white mt-2 max-w-100 -translate-x-25 sm:-translate-x-0">
+          <p className="text-[0.6rem] text-white mt-2 max-w-100 -translate-x-25 sm:-translate-x-3 px-4 md:text-sm">
             {SeccionDonaciones.description}
           </p>
-          <div className="flex flex-row w-full gap-5 mt-5 flex-wrap -translate-x-30 justify-center sm:-translate-x-0">
+          <div className="flex flex-row w-full gap-5 mt-5 flex-wrap -translate-x-20 justify-start sm:-translate-x-0">
             {SeccionDonaciones.links.map((link, index) => (
               <button
-                className={`bg-white text-[#${SeccionDonaciones.color}] h-10 rounded-[10px] px-5 flex flex-row justify-center items-center gap-2 flex-wrap hover:translate-x-1 transition-all duration-300 active:translate-y-[1px] cursor-pointer`}
+                className={`bg-white text-[#DABE57] h-10 rounded-[10px] px-5 flex flex-row justify-center items-center gap-2 flex-wrap hover:translate-x-1 transition-all duration-300 active:translate-y-[1px] cursor-pointer`}
                 key={index}
               >
                 {link.title}
