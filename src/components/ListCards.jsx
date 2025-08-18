@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { forwardRef } from "react";
 import { motion } from "motion/react";
 import {
@@ -9,12 +9,15 @@ import {
 } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
-const ListCards = forwardRef((props, ref) => {
+const ListCards = forwardRef(({ hogarRef, preguntasRef, donacionesRef }) => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen w-full flex justify-center items-center flex-col gap-30 mt-30 mb-30 overflow-x-hidden">
+    <div className="min-h-screen w-full flex justify-center items-center flex-col gap-30 mt-30 mb-30 overflow-x-hidden md:gap-15">
       {/* Hogar */}
-      <div className="flex justify-center items-center flex-row relative bordermax-w-full">
+      <section
+        ref={hogarRef}
+        className="flex justify-center items-center flex-row relative bordermax-w-full md:min-h-screen md:pt-10"
+      >
         {/* Imagen */}
         <motion.img
           initial={{ x: -100, opacity: 0 }} // parte desde la izquierda
@@ -23,7 +26,7 @@ const ListCards = forwardRef((props, ref) => {
           viewport={{ once: true }} // solo se ejecuta la primera vez
           src={SeccionHogar.image}
           alt=""
-          className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[10px]"
+          className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[5px]"
         />
 
         {/* Espaciador */}
@@ -70,10 +73,13 @@ const ListCards = forwardRef((props, ref) => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Preguntas */}
-      <div className="flex justify-center items-center flex-row relative bordermax-w-full">
+      <section
+        ref={preguntasRef}
+        className="flex justify-center items-center flex-row relative bordermax-w-full md:min-h-screen md:pt-10"
+      >
         {/* Espaciador */}
         <div className="h-[550px] w-[300px] md:w-[500px]"></div>
 
@@ -129,12 +135,15 @@ const ListCards = forwardRef((props, ref) => {
           viewport={{ once: true }} // solo se ejecuta la primera vez
           src={SeccionPreguntas.image}
           alt=""
-          className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[10px]"
+          className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[5px]"
         />
-      </div>
+      </section>
 
       {/* Donaciones */}
-      <div className="flex justify-center items-center flex-row relative bordermax-w-full">
+      <section
+        ref={donacionesRef}
+        className="flex justify-center items-center flex-row relative bordermax-w-full md:min-h-screen md:pt-10"
+      >
         {/* Imagen */}
         <motion.img
           initial={{ x: -100, opacity: 0 }} // parte desde la izquierda
@@ -143,7 +152,7 @@ const ListCards = forwardRef((props, ref) => {
           viewport={{ once: true }} // solo se ejecuta la primera vez
           src={SeccionDonaciones.image}
           alt=""
-          className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[10px]"
+          className="min-h-[570px] max-w-[300px] object-cover blur-[1.5px] z-0 rounded-[5px]"
         />
 
         {/* Espaciador */}
@@ -190,7 +199,7 @@ const ListCards = forwardRef((props, ref) => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 });

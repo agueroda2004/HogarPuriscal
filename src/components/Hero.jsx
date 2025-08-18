@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { assets, imgUrl } from "../assets/assets";
 import { NavLink } from "react-router-dom";
 import { delay, motion } from "motion/react";
 
-const Hero = ({ infoRef }) => {
+const Hero = forwardRef((props, ref) => {
   const sliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 5;
@@ -37,7 +37,7 @@ const Hero = ({ infoRef }) => {
   }, [currentSlide]);
 
   return (
-    <div className="relative">
+    <section className="relative" ref={ref}>
       {/* Overlay */}
       <div className="w-full h-screen absolute bg-black opacity-30 z-10"></div>
       {/* 
@@ -89,8 +89,8 @@ const Hero = ({ infoRef }) => {
         className="w-full h-screen bg-cover bg-center blur-xs"
         style={{ backgroundImage: `url(${imgUrl.HeroImagen})` }}
       ></div>
-    </div>
+    </section>
   );
-};
+});
 
 export default Hero;

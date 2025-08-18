@@ -189,7 +189,7 @@ export const quienesSomos = [
 ];
 
 export const SeccionDonaciones = {
-  title: "¿Desea colaborarnos?",
+  title: "¿Desea ayudarnos?",
   description: `En nuestro hogar de adultos mayores trabajamos cada día para brindar atención, cuidado y un ambiente lleno de respeto y cariño a quienes más lo necesitan. Puede apoyarnos a través de donaciones económicas, insumos o dedicando su tiempo como voluntario. Cada aporte, por pequeño que parezca, marca una gran diferencia en la vida de nuestros adultos mayores.`,
   image:
     "https://ik.imagekit.io/5zi86k8wt/Hogar%20Puriscal/Seccion1.png?updatedAt=1755295619898",

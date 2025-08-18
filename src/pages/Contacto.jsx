@@ -224,7 +224,7 @@ const Contacto = () => {
                 onChange={handleChange}
                 type="text"
                 placeholder="Introduce tu nombre"
-                className="w-full pl-5 outline-none text-[0.8rem] text-sm"
+                className="w-full pl-5 outline-none text-[0.8rem] text-base"
               />
             </div>
             {/* Correo */}
@@ -242,7 +242,7 @@ const Contacto = () => {
                 onChange={handleChange}
                 type="text"
                 placeholder="Introduce tu correo electronico"
-                className="w-full pl-5 outline-none text-[0.8rem]  text-sm"
+                className="w-full pl-5 outline-none text-[0.8rem] text-base"
               />
             </div>
 
@@ -264,7 +264,7 @@ const Contacto = () => {
                 value={formData.telefono}
                 onChange={handleChange}
                 placeholder="Ingrese su teléfono"
-                className="w-full outline-none text-[0.8rem] pl-2  text-sm"
+                className="w-full outline-none text-[0.8rem] pl-2 text-base"
               />
             </div>
 
@@ -283,7 +283,7 @@ const Contacto = () => {
                 value={formData.asunto}
                 onChange={handleChange}
                 placeholder="Introduce el asunto"
-                className="w-full pl-5 outline-none text-[0.8rem]  text-sm"
+                className="w-full pl-5 outline-none text-[0.8rem] text-base"
               />
             </div>
             {/* Mensaje */}
@@ -301,7 +301,7 @@ const Contacto = () => {
                 value={formData.mensaje}
                 onChange={handleChange}
                 placeholder="Introduce el mensaje"
-                className="w-full pl-5 outline-none text-[0.8rem] min-h-[100px] pt-2  resize-none  text-sm"
+                className="w-full pl-5 outline-none text-[0.8rem] min-h-[100px] pt-2  resize-none text-base"
               />
             </div>
             {/* Enviar y redes sociales */}

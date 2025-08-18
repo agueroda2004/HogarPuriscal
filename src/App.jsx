@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Navbar from "./components/Navbar";
@@ -13,13 +13,31 @@ import Contacto from "./pages/Contacto";
 import { Toaster } from "react-hot-toast";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const hogarRef = useRef(null);
+  const preguntasRef = useRef(null);
+  const donacionesRef = useRef(null);
+  const heroRef = useRef(null);
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        hogarRef={hogarRef}
+        preguntasRef={preguntasRef}
+        donacionesRef={donacionesRef}
+        heroRef={heroRef}
+      />
       <Routes>
-        <Route path="" element={<Home />} />
+        <Route
+          path=""
+          element={
+            <Home
+              hogarRef={hogarRef}
+              preguntasRef={preguntasRef}
+              donacionesRef={donacionesRef}
+              heroRef={heroRef}
+            />
+          }
+        />
         <Route path="/working" element={<Developing />} />
         <Route path="/quienes-somos" element={<QuienesSomos />} />
         <Route path="/contacto" element={<Contacto />} />
