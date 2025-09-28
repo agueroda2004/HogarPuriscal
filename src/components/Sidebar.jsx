@@ -1,6 +1,7 @@
 import React from "react";
-import { assets, menuLinks } from "../assets/assets";
+import { assets, menuLinks } from "../assets/assets.jsx";
 import { NavLink, useLocation } from "react-router-dom";
+import Redes from "./Redes";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
@@ -11,15 +12,34 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       }`}
     >
       <div className="h-20 flex flex-row justify-start items-center px-5">
-        <button className="text-white text-2xl" onClick={toggleSidebar}>
-          <img
-            src={assets.Close}
-            alt=""
-            className="w-8 h-8 cursor-pointer hover:-translate-y-[1px] active:translate-y-[0.5px] transition-transform duration-300"
-          />
+        <button
+          className="text-amber-500 text-2xl w-[20px] h-[20px] cursor-pointer"
+          onClick={toggleSidebar}
+        >
+          <svg
+            viewBox="-0.5 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+          >
+            <path
+              d="M3 21.32L21 3.32001"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M3 3.32001L21 21.32"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </button>
       </div>
-      <ul className="flex flex-col w-full justify-center items-center gap-6 text-[#4E4E4E] text-[0.9rem]">
+      <ul className="flex flex-col w-full justify-center items-center gap-6 text-[#4E4E4E] text-[0.8rem]">
         {menuLinks.map((link, index) => (
           <NavLink
             key={index}
@@ -32,16 +52,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         ))}
       </ul>
       <div className="w-full h-20 flex flex-row justify-center items-center gap-3">
-        <img
-          src={assets.FacebookIcon}
-          alt=""
-          className="w-7 h-7 hover-effect"
-        />
-        <img
-          src={assets.WhatsAppIcon}
-          alt=""
-          className="w-7 h-7 hover-effect"
-        />
+        <Redes />
       </div>
     </div>
   );

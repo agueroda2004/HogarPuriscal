@@ -1,28 +1,124 @@
 import React from "react";
-import { assets, menuLinks } from "../assets/assets";
+import { assets, imgUrl, menuLinks } from "../assets/assets.jsx";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import Redes from "./Redes";
 
 const Footer = () => {
+  // Fix para que aparezca el icono del marcador (por defecto no carga bien en Vite)
+  const customIcon = new L.Icon({
+    iconUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+  });
+
   return (
-    <div className="w-full border border-gray-300 bg-[#FBFBFB] py-20">
-      {/* Contacto */}
-      <div className="text-sm text-[#4E4E4E] w-full">
-        <div className="flex flex-col items-center">
-          <p className="font-semibold">Contáctanos</p>
-          <p>(506) 2416-6250</p>
-          <p>hogarpam@hogarpuriscal.org</p>
-          <div className="flex flex-row gap-2 mt-2">
-            <img
-              src={assets.FacebookIcon}
-              alt="Facebook"
-              className="hover-effect w-8"
-            />
-            <img
-              src={assets.WhatsAppIcon}
-              alt="WhatsApp"
-              className="hover-effect w-8"
-            />
-          </div>
+    <div className="w-full bg-white pb-5 shadow-[0_-0px_5px_rgba(0,0,0,0.2)] text-black/60 flex flex-col md:pt-20 md:justify-between md:px-20 font-light">
+      {/* Contactos */}
+      <div className="w-full flex flex-col items-center text-[1rem] mt-10 justify-center md:mt-0 ">
+        <p className="text-lg">Contactos</p>
+        <p>(506) 2416-6250</p>
+        <p>hogarpam@hogarpuriscal.org</p>
+
+        {/* Redes sociales */}
+        <div className="flex flex-row gap-2 justify-center items-center mt-2">
+          <Redes />
         </div>
+      </div>
+
+      {/* Mapa */}
+      {/* <div className="w-full relative h-[300px] mt-10 md:mt-0 md:h-[300px] md:max-w-[550px]">
+        <div className="h-full w-full flex flex-col justify-center items-center gap-2 absolute rounded-md overflow-hidden md:px-0 px-5">
+          <MapContainer
+            center={[9.849732534882362, -84.3124977409058]}
+            zoom={15}
+            style={{ height: "100%", width: "100%" }}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+            <Marker
+              position={[9.849732534882362, -84.3124977409058]}
+              icon={customIcon}
+            >
+              <Popup autoOpen autoClose={false}>
+                Hogar Puriscal
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+
+        <div className="rounded-[10px] p-1 flex absolute bottom-5 z-[1000] bg-white/85 left-8 md:bottom-5 md:left-5">
+          <svg
+            fill="#000000"
+            viewBox="0 0 14 14"
+            role="img"
+            focusable="false"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-[30px] h-[30px] fill-amber-500 hover-effect"
+          >
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="m 12.937649,5.689685 c -0.11625,-0.68661 -0.388914,-1.33016 -0.810638,-1.91282 -0.476314,-0.65811 -1.127922,-1.20761 -1.884324,-1.58903 -0.7645339,-0.38552 -1.6178829,-0.58938 -2.4678369,-0.58938 -0.239783,0 -0.481475,0.0163 -0.71843,0.0482 -0.992367,0.13407 -1.968118,0.54689 -2.747572,1.16243 -0.878239,0.69354 -1.444993,1.58521 -1.638884,2.57878 -0.05777,0.29537 -0.08238,0.62212 -0.106209,0.93806 -0.03734,0.49456 -0.07594,1.00595 -0.233207,1.34013 -0.107482,0.2284 -0.267856,0.3805 -0.701389,0.3805 -0.238581,0 -0.456585,0.13492 -0.563077,0.34847 -0.10642098,0.21355 -0.08294,0.46889 0.0606,0.65931 0.653164,0.8665 1.505522,1.39133 2.402923,1.70755 -0.04087,0.12346 -0.06385,0.25491 -0.06385,0.39209 0,0.68902 0.558551,1.24757 1.247566,1.24757 0.671972,0 1.218291,-0.53161 1.244949,-1.19701 0.292534,0.0159 1.685483,0.0197 1.840836,0.0153 0.03444,0.65825 0.577502,1.18166 1.244243,1.18166 0.688943,0 1.2474949,-0.55848 1.2474949,-1.24757 0,-0.15705 -0.03026,-0.30674 -0.08316,-0.44513 0.489183,-0.23794 0.95093,-0.55904 1.353845,-0.94576 0.561875,-0.53918 0.974265,-1.1753 1.192764,-1.83964 0.245865,-0.7477 0.307667,-1.4993 0.183355,-2.23378 m -8.2243299,5.876 c -0.227338,0 -0.411684,-0.18421 -0.411684,-0.41169 0,-0.22733 0.184346,-0.41168 0.411684,-0.41168 0.227408,0 0.411683,0.18435 0.411683,0.41168 0,0.22748 -0.184275,0.41169 -0.411683,0.41169 m 4.330028,0 c -0.227409,0 -0.411754,-0.18421 -0.411754,-0.41169 0,-0.22733 0.184345,-0.41168 0.411754,-0.41168 0.227408,0 0.411683,0.18435 0.411683,0.41168 7.1e-5,0.22748 -0.184275,0.41169 -0.411683,0.41169 m 3.1132919,-3.83873 c -0.360276,1.09533 -1.309862,1.9998 -2.3218169,2.46289 -0.215458,-0.17706 -0.490951,-0.28327 -0.791405,-0.28327 -0.484233,0 -0.903058,0.2762 -1.109748,0.67933 -0.210438,0.009 -1.777338,0.003 -2.120219,-0.0202 -0.210155,-0.39223 -0.623818,-0.65917 -1.100061,-0.65917 -0.316788,0 -0.605221,0.11894 -0.825134,0.31354 -0.852358,-0.27543 -1.65734,-0.74608 -2.259025,-1.54449 1.779176,0 1.428092,-1.98827 1.658259,-3.16731 0.350659,-1.79693 2.12835,-3.00518 3.853148,-3.23817 0.212135,-0.0286 0.42427,-0.0426 0.634213,-0.0426 2.8347599,7e-5 5.3581049,2.53098 4.3817889,5.49938 m -4.4056189,0.87435 c -1.023692,0 -1.945914,-0.67119 -2.115056,-1.54978 -0.03281,-0.17056 0.07891,-0.33553 0.249471,-0.36834 0.170627,-0.0329 0.335527,0.0789 0.368337,0.24947 0.09942,0.51648 0.717865,1.06039 1.542221,1.03882 0.858722,-0.0225 1.4259,-0.53599 1.542433,-1.03154 0.03981,-0.16907 0.209378,-0.27379 0.378308,-0.23419 0.169213,0.0398 0.274007,0.20916 0.234197,0.37823 -0.09518,0.40454 -0.35568,0.77932 -0.733634,1.05545 -0.393652,0.28779 -0.879511,0.44718 -1.404757,0.46104 -0.02051,6.3e-4 -0.04108,8.4e-4 -0.06152,8.4e-4 m 2.037132,-3.23958 c 0,0.33369 -0.270542,0.60423 -0.604231,0.60423 -0.333617,0 -0.60416,-0.27054 -0.60416,-0.60423 0,-0.33369 0.270543,-0.60409 0.60416,-0.60409 0.333689,0 0.604231,0.27033 0.604231,0.60409 m -2.822597,0 c 0,0.33369 -0.270472,0.60423 -0.60416,0.60423 -0.333618,0 -0.60416,-0.27054 -0.60416,-0.60423 0,-0.33369 0.270542,-0.60409 0.60416,-0.60409 0.333688,0 0.60416,0.27033 0.60416,0.60409"></path>
+            </g>
+          </svg>
+          <svg
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            className="w-[30px] h-[30px] fill-amber-500 hover-effect"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <defs>
+                <style>
+                  .a
+                  {`fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;`}
+                </style>
+              </defs>
+              <path
+                class="a"
+                d="M17.8971,33.398A39.3963,39.3963,0,0,1,20.97,37.9305a22.9991,22.9991,0,0,1,1.6835,4.2849c.3512.9893.6687,1.2846,1.3513,1.2846.7439,0,1.0814-.5023,1.3421-1.2792A23.224,23.224,0,0,1,26.9837,38.02a47.8757,47.8757,0,0,1,4.5556-6.4576A41.3528,41.3528,0,0,0,36.05,25.0614a15.78,15.78,0,0,0,1.5553-6.887,13.5933,13.5933,0,0,0-1.5338-6.3579"
+              ></path>
+              <path
+                class="a"
+                d="M11.7348,24.5783c1.4572,3.3284,4.2673,6.2543,6.1685,8.822L28.0015,21.4384a5.3056,5.3056,0,0,1-4.0034,1.8606,5.1725,5.1725,0,0,1-5.1967-5.19,5.5055,5.5055,0,0,1,1.1941-3.3484"
+              ></path>
+              <path
+                class="a"
+                d="M28.1142,5.1151a13.519,13.519,0,0,1,7.9608,6.6991l-8.0705,9.6173a5.6064,5.6064,0,0,0,1.1941-3.3606A5.2235,5.2235,0,0,0,24.01,12.8964a5.4179,5.4179,0,0,0-4.0111,1.8575"
+              ></path>
+              <path
+                class="a"
+                d="M13.5847,9.3646A13.4781,13.4781,0,0,1,23.972,4.5a13.8562,13.8562,0,0,1,4.1338.6189l-8.1142,9.64"
+              ></path>
+              <path
+                class="a"
+                d="M11.7348,24.5783A15.3756,15.3756,0,0,1,10.3943,18.15a13.5161,13.5161,0,0,1,3.19-8.7852L19.9962,14.76Z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </div> */}
+
+      {/* Derechos */}
+      <div className="w-full text-[0.8rem] text-center mt-15 px-5">
+        © 2025 Hogar para Adultos Mayores Corazón de Jesús de Puriscal – Todos
+        los derechos reservados
       </div>
     </div>
   );

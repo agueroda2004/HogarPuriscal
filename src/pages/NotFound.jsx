@@ -1,5 +1,5 @@
 import React from "react";
-import { assets } from "../assets/assets";
+import { assets } from "../assets/assets.jsx";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const NotFound = () => {

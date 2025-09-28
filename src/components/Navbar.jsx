@@ -1,10 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import { assets, imgUrl } from "../assets/assets";
+import { assets, imgUrl } from "../assets/assets.jsx";
 import Sidebar from "./Sidebar";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 
-const Navbar = ({ heroRef, hogarRef, preguntasRef, donacionesRef }) => {
+const Navbar = ({
+  heroRef,
+  hogarRef,
+  preguntasRef,
+  donacionesRef,
+  serviciosRefs,
+}) => {
   const navRef = useRef(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,6 +31,7 @@ const Navbar = ({ heroRef, hogarRef, preguntasRef, donacionesRef }) => {
     }
 
     const hero = heroRef?.current;
+    console.log(hero);
     if (!nav || !hero) return;
 
     const navHeight = nav.getBoundingClientRect().height;
@@ -83,7 +90,7 @@ const Navbar = ({ heroRef, hogarRef, preguntasRef, donacionesRef }) => {
       {location.pathname === "/" && (
         <div
           className={`gap-10 hidden md:flex ${
-            !isScrolled ? "text-white" : "text-amber-700"
+            !isScrolled ? "text-white" : "text-amber-500"
           }  box-border overflow-hidden h-full justify-center items-center font-light`}
         >
           <a
@@ -119,12 +126,55 @@ const Navbar = ({ heroRef, hogarRef, preguntasRef, donacionesRef }) => {
           </a>
         </div>
       )}
+      {location.pathname === "/servicios" && (
+        <div className="gap-10 hidden md:flex text-amber-500 box-border overflow-hidden h-full justify-center items-center font-light">
+          <a
+            onClick={() => scrollTo(serviciosRefs.fisioterapiaRef)}
+            className="inline-block border-b-1 border-transparent hover:border-amber-500/70 cursor-pointer text-sm opacity-80"
+          >
+            Fisioterapia
+          </a>
+          <a
+            onClick={() => scrollTo(serviciosRefs.enfermeriaRef)}
+            className="inline-block border-b-1 border-transparent hover:border-amber-500/70 cursor-pointer text-sm opacity-80"
+          >
+            Enfermería
+          </a>
+          <a
+            onClick={() => scrollTo(serviciosRefs.nutricionRef)}
+            className="inline-block border-b-1 border-transparent hover:border-amber-500/70 cursor-pointer text-sm opacity-80"
+          >
+            Nutrición
+          </a>
+          <a
+            onClick={() => scrollTo(serviciosRefs.gereatriaRef)}
+            className="inline-block border-b-1 border-transparent hover:border-amber-500/70 cursor-pointer text-sm opacity-80"
+          >
+            Geriatría
+          </a>
+        </div>
+      )}
 
       <button
         className=" cursor-pointer hover:-translate-y-[1px] active:translate-y-[0.5px] transition-transform duration-300"
         onClick={toggleSidebar}
       >
-        <img src={assets.Menu} alt="" className="w-10 h-10" />
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={`w-10 h-10 ${
+            isScrolled ? "text-amber-500" : "text-white"
+          }`}
+        >
+          <path
+            d="M4 6H20M4 12H20M4 18H20"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
     </motion.div>
   );
